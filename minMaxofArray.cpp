@@ -11,6 +11,11 @@ void getArray(int arr[],int size) {
         cin >> arr[i];
     }
 }
+void printArray(int arr[],int size) {
+    for(int i=0;i<size;i++) {
+        cout << arr[i] << " ";
+    }
+}
 int main()
 {
     int size,max,min;
@@ -21,13 +26,17 @@ int main()
     max=getMax(arr,size);
     cout << "Max nubmer in array is " << max << endl;
     min=getMin(arr,size);
-    cout << "Min nubmer in array is " << min ;
+    cout << "Min nubmer in array is " << min << endl;
+    printArray(arr,size);
 }
 
 int getMax(int arr[],int size) {
     int max_num=INT_MIN;
     for(int i=0;i<size;i++) {
         max_num = max(max_num, arr[i]) ;
+        /*if(arr[i]>max_num) {
+            max_num=arr[i];
+        }*/
     }
     return max_num;
 }
@@ -36,6 +45,9 @@ int getMin(int arr[],int size) {
     int min_num=INT_MAX;
     for(int i=0;i<size;i++) {
         min_num = min(min_num,arr[i]);
+        /*if(arr[i]<min_num) {
+            min_num=arr[i];
+        }*/
     }
     return min_num;
 }
